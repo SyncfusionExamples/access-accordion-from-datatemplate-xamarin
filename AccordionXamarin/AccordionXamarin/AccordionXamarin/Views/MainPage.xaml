@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:AccordionXamarin"
+             xmlns:syncfusion="clr-namespace:Syncfusion.XForms.Accordion;assembly=Syncfusion.Expander.XForms"
+             xmlns:sfPopup="clr-namespace:Syncfusion.XForms.PopupLayout;assembly=Syncfusion.SfPopupLayout.XForms"
+             x:Class="AccordionXamarin.MainPage">
+
+    <ContentPage.Content>
+        <sfPopup:SfPopupLayout x:Name="popupLayout" Margin="{OnPlatform iOS='0,40,0,0'}">
+            <sfPopup:SfPopupLayout.Behaviors>
+                <local:PopupBehavior/>
+            </sfPopup:SfPopupLayout.Behaviors>
+            <sfPopup:SfPopupLayout.PopupView>
+                <sfPopup:PopupView WidthRequest="400" HeightRequest="400" ShowFooter="False">
+                    <sfPopup:PopupView.ContentTemplate>
+                        <DataTemplate>
+                            <ScrollView BackgroundColor="#EDF2F5" Grid.Row="1">
+                                <StackLayout>
+                                    <StackLayout.Behaviors>
+                                        <local:Behavior/>
+                                    </StackLayout.Behaviors>
+                                    <Button HeightRequest="50" Text="Change Accordion Header Icon Position" x:Name="accordionButton" BackgroundColor="LightGray"/>
+                                    <syncfusion:SfAccordion Grid.Row="1" x:Name="accordion" ExpandMode="MultipleOrNone" >
+                                        <syncfusion:SfAccordion.Items>
+                                            <syncfusion:AccordionItem>
+                                                <syncfusion:AccordionItem.Header>
+                                                    <Grid>
+                                                        <Label Margin="5" TextColor="#495F6E" Text="Cheese burger" HeightRequest="50" VerticalTextAlignment="Center"/>
+                                                    </Grid>
+                                                </syncfusion:AccordionItem.Header>
+                                                <syncfusion:AccordionItem.Content>
+                                                    <Grid Padding="10" BackgroundColor="#FFFFFF">
+                                                        <Label TextColor="#303030" Text="Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt." HeightRequest="100" VerticalTextAlignment="Center"/>
+                                                    </Grid>
+                                                </syncfusion:AccordionItem.Content>
+                                            </syncfusion:AccordionItem>
+                                            <syncfusion:AccordionItem>
+                                                <syncfusion:AccordionItem.Header>
+                                                    <Grid>
+                                                        <Label Margin="5" TextColor="#495F6E" Text="Veggie burger" HeightRequest="50" VerticalTextAlignment="Center"/>
+                                                    </Grid>
+                                                </syncfusion:AccordionItem.Header>
+                                                <syncfusion:AccordionItem.Content>
+                                                    <Grid Padding="10" BackgroundColor="#FFFFFF">
+                                                        <Label TextColor="#303030" Text="Veggie burger, garden burger, or tofu burger uses a meat analogue, a meat substitute such as tofu, textured vegetable protein, seitan (wheat gluten), Quorn, beans, grains or an assortment of vegetables, which are ground up and formed into patties." HeightRequest="100" VerticalTextAlignment="Center"/>
+                                                    </Grid>
+                                                </syncfusion:AccordionItem.Content>
+                                            </syncfusion:AccordionItem>
+                                            <syncfusion:AccordionItem>
+                                                <syncfusion:AccordionItem.Header>
+                                                    <Grid>
+                                                        <Label Margin="5" TextColor="#495F6E" Text="Barbecue burger" HeightRequest="50" VerticalTextAlignment="Center"/>
+                                                    </Grid>
+                                                </syncfusion:AccordionItem.Header>
+                                                <syncfusion:AccordionItem.Content>
+                                                    <Grid Padding="10" BackgroundColor="#FFFFFF">
+                                                        <Label TextColor="#303030" Text="Prepared with ground beef, mixed with onions and barbecue sauce, and then grilled. Once the meat has been turned once, barbecue sauce is spread on top and grilled until the sauce caramelizes." HeightRequest="100" VerticalTextAlignment="Center"/>
+                                                    </Grid>
+                                                </syncfusion:AccordionItem.Content>
+                                            </syncfusion:AccordionItem>
+                                            <syncfusion:AccordionItem>
+                                                <syncfusion:AccordionItem.Header>
+                                                    <Grid>
+                                                        <Label Margin="5" TextColor="#495F6E" Text="Chili burger" HeightRequest="50" VerticalTextAlignment="Center"/>
+                                                    </Grid>
+                                                </syncfusion:AccordionItem.Header>
+                                                <syncfusion:AccordionItem.Content>
+                                                    <Grid Padding="10" BackgroundColor="#FFFFFF">
+                                                        <Label TextColor="#303030" Text="Consists of a hamburger, with the patty topped with chili con carne." HeightRequest="50" VerticalTextAlignment="Center"/>
+                                                    </Grid>
+                                                </syncfusion:AccordionItem.Content>
+                                            </syncfusion:AccordionItem>
+                                        </syncfusion:SfAccordion.Items>
+                                    </syncfusion:SfAccordion>
+                                </StackLayout>
+                            </ScrollView>
+                        </DataTemplate>
+                    </sfPopup:PopupView.ContentTemplate>
+                </sfPopup:PopupView>
+            </sfPopup:SfPopupLayout.PopupView>
+            <sfPopup:SfPopupLayout.Content>
+                <Grid x:Name="popupGrid">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Button x:Name="ShowPopup" Text="Bring Popup" />
+                </Grid>
+            </sfPopup:SfPopupLayout.Content>
+        </sfPopup:SfPopupLayout>
+    </ContentPage.Content>
+</ContentPage>
